@@ -1,28 +1,28 @@
 var employeeArray = [
-    "Regierung", 
-    "Militär", 
-    "Policlub", 
-    "Krankenhaus", 
-    "Shadowrunner", 
-    "Gang", 
-    "Syndikat", 
-    "Lokaler Konzern", 
-    "B-Konzern", 
-    "A-Konzern", 
-    "AA-Konzern", 
-    "AAA-Konzern", 
-    "Kult", 
-    "Gruppierung", 
-    "Verein",
-    "Privatperson",
-    "Geheimgesellschaft",
-    "Exotisches/Mysteriöses Wesen"
+    "für die Regierung", 
+    "für das Militär", 
+    "für einen Policlub", 
+    "für ein Krankenhaus", 
+    "für einen Shadowrunner", 
+    "für eine Gang", 
+    "für ein Syndikat", 
+    "für einen Lokaler Konzern", 
+    "für einen B-Konzern", 
+    "für einen A-Konzern", 
+    "für einen AA-Konzern", 
+    "für einen AAA-Konzern", 
+    "für einen Kult", 
+    "für eine Gruppierung", 
+    "für einen Verein",
+    "für eine Privatperson",
+    "für eine Geheimgesellschaft",
+    "für ein mysteriöses Wesen"
 ]
 var jobtypeArray = [
-    "Magische Bedrohung",
+    "Magische Unterstützung",
     "Vermisstensuche",
-    "Critterprobleme",
-    "Aussergewöhnliche Ereignisse",
+    "Hilfe bei Critterproblemen",
+    "Untersuchung aussergewöhnlicher Ereignisse",
     "Auftragsmord",
     "Erpressung",
     "Personenschutz",
@@ -34,7 +34,7 @@ var jobtypeArray = [
     "Ablenkung",
     "Extraktion",
     "Hacking",
-    "Nachforschungen",
+    "Nachforschungen anstellen",
     "Wiederbeschaffung",
     "Objektschutz",
     "Krieg"
@@ -111,7 +111,7 @@ function copy() {
 }
 
 function generate() {
-    document.getElementById('header').innerHTML = getRandom(jobtypeArray)+" für "+getRandom(employeeArray);
+    document.getElementById('header').innerHTML = getRandom(jobtypeArray)+" "+getRandom(employeeArray);
     document.getElementById('meetinglocation').innerHTML = "Johnson trifft euch <strong>"+getRandom(meetinglocationArray)+".</strong>";
     document.getElementById('target').innerHTML = "Das Ziel <strong>"+getRandom(targetArray)+".</strong>";
     document.getElementById('payment').innerHTML = "Erwartet eine <strong>"+getRandom(paymentArray)+" Bezahlung.</strong>";
