@@ -84,6 +84,31 @@ function getRandom(array) {
     return array[randomNumber];
 }
 
+function copy() {
+    var doc = document
+        , text = doc.getElementById("card")
+        , range, selection;    
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+      } catch (err) {
+        console.log('Oops, unable to copy');
+      }
+    selection.removeAllRanges()
+}
+
 function generate() {
     document.getElementById('header').innerHTML = getRandom(jobtypeArray)+" für "+getRandom(employeeArray);
     document.getElementById('meetinglocation').innerHTML = "Johnson trifft euch <strong>"+getRandom(meetinglocationArray)+".</strong>";
