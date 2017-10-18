@@ -103,6 +103,7 @@ function copy() {
         var successful = document.execCommand('copy');
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copying text command was ' + msg);
+        $('#alert').fadeIn();
       } catch (err) {
         console.log('Oops, unable to copy');
       }
@@ -115,5 +116,6 @@ function generate() {
     document.getElementById('target').innerHTML = "Das Ziel <strong>"+getRandom(targetArray)+".</strong>";
     document.getElementById('payment').innerHTML = "Erwartet eine <strong>"+getRandom(paymentArray)+" Bezahlung.</strong>";
     document.getElementById('issues').innerHTML = "Überraschung: <strong>"+getRandom(issuesArray)+"</strong>";
+    $('#alert').fadeOut();
 }
 document.addEventListener('DOMContentLoaded', generate, false);
