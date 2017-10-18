@@ -103,7 +103,7 @@ function copy() {
         var successful = document.execCommand('copy');
         var msg = successful ? 'successful' : 'unsuccessful';
         console.log('Copying text command was ' + msg);
-        $('#alert').fadeIn();
+        $('#alert').fadeTo('fast', 1);
       } catch (err) {
         console.log('Oops, unable to copy');
       }
@@ -111,11 +111,17 @@ function copy() {
 }
 
 function generate() {
+    var content = $('#content')
+    content.fadeTo(0, 0);
     document.getElementById('header').innerHTML = getRandom(jobtypeArray)+" "+getRandom(employeeArray);
-    document.getElementById('meetinglocation').innerHTML = "Johnson trifft euch <strong>"+getRandom(meetinglocationArray)+".</strong>";
-    document.getElementById('target').innerHTML = "Das Ziel <strong>"+getRandom(targetArray)+".</strong>";
-    document.getElementById('payment').innerHTML = "Erwartet eine <strong>"+getRandom(paymentArray)+" Bezahlung.</strong>";
-    document.getElementById('issues').innerHTML = "Überraschung: <strong>"+getRandom(issuesArray)+"</strong>";
-    $('#alert').fadeOut();
+    var contentArray = [
+        "<i>Hier die Auftragsdetails in Kürze:</i><br>",
+        "Johnson trifft euch <strong>"+getRandom(meetinglocationArray)+".</strong>",
+        "Das Ziel <strong>"+getRandom(targetArray)+".</strong>",
+        "Erwartet eine <strong>"+getRandom(paymentArray)+" Bezahlung.</strong>",
+        "Überraschung: <strong>"+getRandom(issuesArray)+"</strong>"
+    ];
+    content.html(contentArray.join("</br>"));
+    $('#header').typeIt({speed:30,autoStart:true,callback:function(){content.fadeTo('fast', 1);}})
 }
 document.addEventListener('DOMContentLoaded', generate, false);

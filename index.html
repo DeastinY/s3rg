@@ -6,42 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
     crossorigin="anonymous">
+    <link rel="stylesheet" href="s3rg.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script> 
   <script src="s3rg.js"></script>
   <title>S3RG</title>
 </head>
 
 <body>
-  <div class="jumbotron" style="height:37em;max-width:46em; margin:auto">
+  <div class="jumbotron" id="jumbotron">
     <h1>ShadowRun Random Run Generator</h1>
+    <div class="container-fluid" id="container-fluid">
+      <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-success btn-block" onclick="copy();">Annehmen</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-danger btn-block" onclick="generate();">Anderer Auftrag</button>
+        </div>
+      </div>
+    </div>
     <div class="card text-center" id="card">
-      <div class="card-header" style="height:6em;">
+      <div class="card-header">
         <h2 id="header">Auftrag:</h2>
       </div>
       <div class="card-block">
-        <p class="card-text">
-          <i>Hier die Auftragsdetails in Kürze:</i>
-        </p>
-        <p class="card-text" id="meetinglocation" />
-        <p class="card-text" id="target" />
-        <p class="card-text" id="payment" />
-        <p class="card-text" id="issues" />
+        <span class="card-text" id="content"></span>
       </div>
       <div class="card-footer text-muted">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-success btn-block" onclick="copy();">Annehmen</button>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-danger btn-block" onclick="generate();">Anderer Auftrag</button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <div class="alert alert-success collapse" role="alert" id="alert" style="margin-top:1em;">

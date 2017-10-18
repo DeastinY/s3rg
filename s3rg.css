@@ -1,0 +1,9 @@
+#jumbotron {
+    max-width: 46em; 
+    margin: auto; 
+    padding: 1rem;
+    height: 100vh;
+}
+#container-fluid {
+    margin-bottom:1em;
+}
