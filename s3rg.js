@@ -6,7 +6,7 @@ var employeeArray = [
     "für einen Shadowrunner", 
     "für eine Gang", 
     "für ein Syndikat", 
-    "für einen Lokaler Konzern", 
+    "für einen Lokalen Konzern", 
     "für einen B-Konzern", 
     "für einen A-Konzern", 
     "für einen AA-Konzern", 
