@@ -14,7 +14,9 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      mode: 'md' // 'md' | 'ios' | 'wp'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
