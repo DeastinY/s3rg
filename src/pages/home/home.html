@@ -10,10 +10,10 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6>
-        <button ion-button block color="secondary">Annehmen</button>
+        <button ion-button block color="secondary" (click)="copy_clipboard()">Annehmen</button>
       </ion-col>
       <ion-col col-6>
-        <button ion-button block color="danger"(click)="generate_new()">Nächster</button>
+        <button ion-button block color="danger" (click)="generate_new()">Nächster</button>
       </ion-col>
     </ion-row>
     <ion-row>

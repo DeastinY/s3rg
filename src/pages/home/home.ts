@@ -95,7 +95,7 @@ export class HomePage {
     
   }
 
-  getRandom(array) {
+  get_random(array) {
     var randomNumber = Math.floor(Math.random()*array.length);
     return array[randomNumber];
   }
@@ -106,16 +106,16 @@ export class HomePage {
   }
 
   generate_title() {
-    return this.getRandom(this.jobtypeArray)+" "+this.getRandom(this.employeeArray);
+    return this.get_random(this.jobtypeArray)+" "+this.get_random(this.employeeArray);
   }
 
   generate_description() {
     var contentArray = [
         "<i>Hier die Auftragsdetails in Kürze:</i><br>",
-        "Johnson trifft euch <strong>"+this.getRandom(this.meetinglocationArray)+".</strong>",
-        "Das Ziel <strong>"+this.getRandom(this.targetArray)+".</strong>",
-        "Erwartet eine <strong>"+this.getRandom(this.paymentArray)+" Bezahlung.</strong>",
-        "Überraschung: <strong>"+this.getRandom(this.issuesArray)+"</strong>"
+        "Johnson trifft euch <strong>"+this.get_random(this.meetinglocationArray)+".</strong>",
+        "Das Ziel <strong>"+this.get_random(this.targetArray)+".</strong>",
+        "Erwartet eine <strong>"+this.get_random(this.paymentArray)+" Bezahlung.</strong>",
+        "Überraschung: <strong>"+this.get_random(this.issuesArray)+"</strong>"
     ];
     return contentArray.join("</br>");
   }
